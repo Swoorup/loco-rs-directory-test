@@ -1,0 +1,40 @@
+[package]
+name = "myapp"
+version = "0.1.0"
+edition = "2021"
+publish = false
+default-run = "myapp-cli"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+loco-rs = { workspace = true  }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+tokio = { workspace = true, features = ["rt-multi-thread"] }
+async-trait = { workspace = true }
+axum = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["env-filter", "json"] }
+regex = { workspace = true }
+migration = { workspace = true }
+sea-orm = { workspace = true, features = ["sqlx-sqlite", "sqlx-postgres", "runtime-tokio-rustls", "macros"] }
+chrono = { workspace = true }
+validator = { workspace = true }
+uuid = { workspace = true, features = ["v4"] }
+include_dir = { workspace = true }
+# view engine i18n
+fluent-templates = { workspace = true, features = ["tera"] }
+unic-langid = { workspace = true }
+# /view engine
+
+[[bin]]
+name = "myapp-cli"
+path = "src/bin/main.rs"
+required-features = []
+
+[dev-dependencies]
+loco-rs = { workspace = true, features = ["testing"] }
+serial_test = { workspace = true }
+rstest = { workspace = true }
+insta = { workspace = true, features = ["redactions", "yaml", "filters"] }
