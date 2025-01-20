@@ -17,7 +17,7 @@ axum = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true, features = ["env-filter", "json"] }
 regex = { workspace = true }
-migration = { workspace = true }
+migration = { path = "./migration" }
 sea-orm = { workspace = true, features = ["sqlx-sqlite", "sqlx-postgres", "runtime-tokio-rustls", "macros"] }
 chrono = { workspace = true }
 validator = { workspace = true }

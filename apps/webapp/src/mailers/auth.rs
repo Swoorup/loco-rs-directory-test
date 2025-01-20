@@ -6,9 +6,9 @@ use serde_json::json;
 
 use crate::models::users;
 
-static welcome: Dir<'_> = include_dir!("crates/webapp/src/mailers/auth/welcome");
-static forgot: Dir<'_> = include_dir!("crates/webapp/src/mailers/auth/forgot");
-static magic_link: Dir<'_> = include_dir!("crates/webapp/src/mailers/auth/magic_link");
+static welcome: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/src/mailers/auth/welcome");
+static forgot: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/src/mailers/auth/forgot");
+static magic_link: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/src/mailers/auth/magic_link");
 // #[derive(Mailer)] // -- disabled for faster build speed. it works. but lets
 // move on for now.
 
